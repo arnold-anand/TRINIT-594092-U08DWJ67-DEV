@@ -1,0 +1,2 @@
+# TRINIT-594092-U08DWJ67-DEV
+Repository for TRINIT'23 Hackathon
