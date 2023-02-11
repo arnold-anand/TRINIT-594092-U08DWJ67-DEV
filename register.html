@@ -20,16 +20,79 @@
                 <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <div class="relative mb-4">
-                <label for="email" class="leading-7 text-sm text-gray-600">Phone No.</label>
-                <input type="tel" id="phone" name="phone" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
+                <input type="password" id="password" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <div class="relative mb-4">
                 <label for="email" class="leading-7 text-sm text-gray-600">Signup as </label>
                 <select type="text" id="signupas" name="signupas" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><option value="NGO">NGO</option>
                     <option value="donor">Donor</option>
             </div>
-            <input type="submit" value="Submit" class="relative mt-4 bg-indigo-500 rounded-xl w-32 h-10 hover:text-white">
+            <input type="submit" id="signup" value="Submit" onclick="location.href='dashboard-donor.html';" class="relative mt-4 bg-indigo-500 rounded-xl w-32 h-10 hover:text-white">
         </div>
     </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+    
+    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCf8sxJyOWZCc-xJzpc29kc6pZ-GNqAJgM",
+        authDomain: "dream-it-58043.firebaseapp.com",
+        databaseURL: "https://dream-it-58043-default-rtdb.firebaseio.com",
+        projectId: "dream-it-58043",
+        storageBucket: "dream-it-58043.appspot.com",
+        messagingSenderId: "901275509006",
+        appId: "1:901275509006:web:d64164a6ce1a2a960f375f",
+        measurementId: "G-Y50QHPGJ3V"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+        const database = getDatabase(app);
+        const auth = getAuth();
+    
+    
+        signup.addEventListener('click', (e) => {
+    
+          var name = document.getElementById('full-name').value;
+          var email = document.getElementById('email').value;
+          var password  = document.getElementById('password').value;
+          var role = document.getElementById('signupas').value;
+    
+         
+    
+          createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              // Signed in 
+              const user = userCredential.user;
+              alert('User Created'); 
+              // ...
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+    
+              alert(errorMessage);
+    
+              // ..
+            });
+        });
+    
+        
+        
+       
+    
+    
+      </script>
 </body>
 </html>
