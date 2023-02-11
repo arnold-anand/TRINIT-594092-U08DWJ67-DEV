@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamIt | Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex justify-center items-center m-5 mt-10 lg:mt-40">
+        <div class="w-full h-[100%] bg-gray-100 p-8 lg:w-[30%] rounded-xl">
+            <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
+            <div class="relative mb-4">
+                <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
+                <input type="text" id="full-name" name="full-name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+                <label for="email" class="leading-7 text-sm text-gray-600">Phone No.</label>
+                <input type="tel" id="phone" name="phone" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+                <label for="email" class="leading-7 text-sm text-gray-600">Signup as </label>
+                <select type="text" id="signupas" name="signupas" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><option value="NGO">NGO</option>
+                    <option value="donor">Donor</option>
+            </div>
+            <input type="submit" value="Submit" class="relative mt-4 bg-indigo-500 rounded-xl w-32 h-10 hover:text-white">
+        </div>
+    </div>
+</body>
+</html>
